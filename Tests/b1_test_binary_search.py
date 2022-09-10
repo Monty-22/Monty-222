@@ -6,6 +6,7 @@ class MyTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.arr = [i for i in range(100)] + [101]
+        #cls.arr = list(range(0,10))
 
     def test_existing(self):
         self.assertEqual(5, binary_search(5, self.arr), msg="Invalid index returned!")

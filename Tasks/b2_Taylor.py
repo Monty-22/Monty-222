@@ -1,6 +1,7 @@
 """
 Taylor series
 """
+import math
 from typing import Union
 
 
@@ -11,6 +12,8 @@ def ex(x: Union[int, float]) -> float:
     :param x: x value
     :return: e^x value
     """
+
+
     print(x)
     return 0
 
