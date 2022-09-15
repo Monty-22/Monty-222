@@ -1,5 +1,5 @@
 from typing import Union, Sequence
-
+from copy import deepcopy
 
 def stairway_path(stairway: Sequence[Union[float, int]]) -> Union[float, int]:
     """
@@ -8,5 +8,10 @@ def stairway_path(stairway: Sequence[Union[float, int]]) -> Union[float, int]:
     :param stairway: list of ints, where each int is a cost of appropriate step
     :return: minimal cost of getting to the top
     """
-    print(stairway)
-    return 0
+
+    stairway.sort()
+    cost = 0
+    for i in range(0, len(stairway), 2):
+        cost += stairway[i]
+    print(cost)
+    return cost
