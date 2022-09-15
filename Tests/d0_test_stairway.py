@@ -5,8 +5,9 @@ import Tasks.d0_stairway as stairway_to_heaven
 class MyTestCase(unittest.TestCase):
     def test_1(self):
         test_st = [1, 3, 1, 5, 2, 7, 7, 8, 9, 4, 6, 3]
+       # test_st = [1, 2, 3, 4, 5]
         self.assertEqual(26, stairway_to_heaven.stairway_path(test_st),
-                         msg="There's a lady who's sure all that glitters is gold")
+                        msg="There's a lady who's sure all that glitters is gold")
 
     def test_2(self):
         test_st = [4, 4, 3, 2, 3, 4, 5, 9, 1, 2, 4, 2]
