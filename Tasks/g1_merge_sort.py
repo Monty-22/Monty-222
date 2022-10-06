@@ -1,29 +1,29 @@
 from typing import List
 
-def merge (container_1, container_2):
+
+def merge(left, right):
     result = []
-    for i in range(len(container_1) - 1):
-        if container_1[i] < container_2[i]:
-            result.append(container_1[i])
-            container_1.remove(container_1[i])
-        if container_2[i] < container_1[i]:
-            result.append(container_2[i])
-            container_2.remove(container_2[i])
+    i = j = r = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
         else:
-            result.append(container_1[i])
-            container_1.remove(container_1[i])
-            result.append(container_2[i])
-            container_2.remove(container_2[i])
+            result.append(right[j])
+            j += 1
+        r += 1
+    while i < len(left):
+        result.append(left[i])
+        i += 1
+    while j < len(right):
+        result.append(right[j])
+        j += 1
+
     return result
 
 
 def sort(container: List[int]) -> List[int]:
-    """
-    Sort input container with merge sort
 
-    :param container: container of elements to be sorted
-    :return: container sorted in ascending order
-    """
     if len(container) == 1:
         return container
 
@@ -36,7 +36,7 @@ def sort(container: List[int]) -> List[int]:
 
 if __name__ == "__main__":
 
-    list_= [10, 17, 3, 58, 44, 100, 19, 40, 21, 66, 55, 32, 49, 9, 2, 45]
+    list_ = [10, 17, 3, 58, 44, 100, 19, 40, 21, 66, 55, 32, 49, 9, 2, 45]
 
-    sort(list_)
+    list_ = sort(list_)
     print(list_)
